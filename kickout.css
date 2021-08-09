@@ -1,0 +1,425 @@
+@font-face {
+    font-family: 'Itim';
+    src: url("Itim-Regular.ttf");
+}
+
+@media all and (max-width:375px){
+    .block{
+        width:40px;
+        height:40px;
+        margin: 2px;
+    }
+
+    #popup{
+        width: 80%;;
+    }
+
+    #title{
+        font-size:30px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    #bout{
+        font-size:20px;
+    }
+}
+
+@media all and (min-width:375px){
+    .block{
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    #popup{
+        width: 85%;
+    }
+
+    #title{
+        font-size:50px;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+
+    #bout{
+        font-size:25px;
+    }
+}
+
+body{
+    background-color:rgb(233, 232, 232);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#display{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game{
+    
+    position: absolute;
+    z-index: 2;
+    visibility: hidden;
+}
+
+#game-display{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    visibility: inherit;
+}
+
+#home{
+    position: absolute;
+    z-index: 1;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top:5%;
+}
+
+#wrapper{
+    display: flex;
+}
+
+.block{
+    background-color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:all 0.5s;
+}
+
+.block:hover{
+    background-color:rgb(219, 218, 218);
+}
+
+#start{
+    cursor: pointer;
+    background-color:rgb(0, 161, 0);
+    margin-top:20px;
+    margin-bottom: 10px;
+}
+
+#start:hover{
+    background-color:rgb(1, 131, 1);
+}
+
+#chose{
+    display: none;
+}
+
+#done{
+    cursor: pointer;
+    background-color:orange;
+    margin: 10px;
+}
+
+#done:hover{
+    background-color:rgb(214, 141, 4);
+}
+
+#wait{
+    visibility: hidden;
+    width: fit-content;
+    height: fit-content;
+    margin:auto;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(180deg);}
+    50%{transform: rotate(360deg);}
+    75%{transform: rotate(540deg);}
+    100%{transform: rotate(720deg);}
+}
+
+#display-score{
+    font-family: 'Itim', cursive;
+    margin-bottom:20px;
+    font-size:30px;
+    border: 2px solid black;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:10px;
+}
+
+.btn{
+    width: 125px;
+    font-size:20px;
+    padding: 10px;
+    border-radius:10px;
+    outline:none;
+    border:none;
+    color:white;
+    transition:all 0.5s;
+}
+
+#popup{
+    align-items: center;
+    position: fixed;
+    top:30%;
+    outline: none;
+    border:none;
+    border-radius:10px;
+    font-family:'Itim', cursive;
+    padding:20px;
+    height:120px;
+}
+
+#noti{
+    margin-bottom: 5px;
+}
+
+#control{
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 30px;
+    visibility: hidden;
+}
+
+.ctrl{
+    width:100px;
+    font-size:20px;
+    padding: 10px;
+    border-radius:10px;
+    outline:none;
+    border:none;
+    color:white;
+    position: relative;
+    z-index: 2;
+    top:-70px;
+}
+
+#replay,#toplay{
+    background-color:rgb(0, 161, 0);
+}
+
+#replay:hover,#toplay:hover{
+    background-color:rgb(1, 131, 1);
+}
+
+#quit{
+    background-color:red;
+}
+
+#quit:hover{
+    background-color:rgb(212, 5, 5);
+}
+
+@keyframes fadeout{
+    0%{opacity:1}
+    100%{opacity:0}
+}
+
+@keyframes fadein{
+    0%{opacity:0}
+    100%{opacity:1}
+}
+
+#title{
+    margin: 20px;
+    font-family: 'Itim', cursive;
+    color:white;
+}
+
+.home{
+    width:150px;
+    font-size:20px;
+    outline:none;
+    padding:10px;
+    border:none;
+    border-radius: 10px;
+    margin:20px;
+    cursor: pointer;
+    transition:all 0.5s;
+    color:white;
+}
+
+#guide{
+    background-color:orange;
+}
+
+#guide:hover{
+    background-color: rgb(214, 141, 4);
+}
+
+#settings{
+    background-color:rgb(132, 20, 236);
+}
+
+#settings:hover{
+    background-color: rgb(101, 18, 179);
+}
+
+#about{
+    background-color:rgb(44, 139, 248);
+}
+
+#about:hover{
+    background-color:rgb(38, 110, 192);
+}
+
+#qg{
+    cursor: pointer;
+    background-color: red;
+    margin:10px;
+}
+
+#qg:hover{
+    background-color:rgb(212, 5, 5);
+}
+
+#how{
+    border:none;
+    outline:none;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+    height:fit-content;
+    margin-top:10%;
+    visibility:hidden;
+    z-index: 3;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+@keyframes down{
+    0%{margin-top:-150%;}
+    100%{margin-top:10%}
+}
+
+@keyframes up{
+    0%{margin-top:10%}
+    100%{margin-top:-150%;}
+}
+
+.dl{
+    position: absolute;
+}
+
+#title-how{
+    font-family: 'Itim', cursive;
+    font-size:35px;
+    color:white;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+#how-content{
+    font-family: 'Itim', cursive;
+    
+}
+
+@media all and (max-height:600px){
+    #how-content {
+        font-size:20px;
+    }
+}
+
+@media all and (min-height:600px){
+    #how-content {
+        font-size:25px;
+    }
+}
+
+#got,#gotab,#doneset{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size:20px;
+    width: 100px;
+    background-color:rgb(0, 161, 0);
+    transition:all 0.5s;
+    cursor: pointer;
+    color:white;
+}
+
+#got:hover, #gotab:hover, #doneset:hover{
+    background-color: rgb(1, 131, 1);
+}
+
+#ab{
+    z-index: 4;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+    height:fit-content;
+    margin-left:10px;
+    margin-right:10px;
+    visibility:hidden;
+    margin-top:25%;
+}
+
+#bout, #st{
+    font-family: 'Itim', cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@keyframes downab{
+    0%{margin-top:-150%;}
+    100%{margin-top:25%}
+}
+
+@keyframes upab{
+    0%{margin-top:25%}
+    100%{margin-top:-150%;}
+}
+
+#set{
+    z-index: 5;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+    height:fit-content;
+    width: 80%;
+    margin-top:30%;
+    visibility:hidden;
+}
+
+#st{
+    font-size:30px;
+}
+
+@keyframes downst{
+    0%{margin-top:-150%;}
+    100%{margin-top:30%}
+}
+
+@keyframes upst{
+    0%{margin-top:30%}
+    100%{margin-top:-150%;}
+}
+
+#rotate{
+    position:absolute;
+    z-index: 6;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
+    font-family: 'Itim', cursive;
+    font-size:30px;
+    width:80%;
+    height:120px;
+    margin-top: 10%;
+    visibility: hidden;
+}
