@@ -20,8 +20,15 @@ var settings = document.getElementById('settings');
 var about = document.getElementById('about');
 
 var audio
+var win
+var lose
+
 var sfx = document.getElementById('sfx')
 var sw = document.getElementById('sw')
+
+audio = new Audio('click.mp3')
+lose = new Audio('lose.mp3')
+win = new Audio('win.mp3')
 
 var sound = false;
 if (sfx.checked) {
@@ -43,9 +50,6 @@ var scr = 0;
 score.innerText = scr;
 
 popup.open = false;
-
-var win
-var lose
 
 var i;
 for (var i = 0; i < block.length; i++) {
@@ -259,6 +263,9 @@ qg.onclick = function () {
 }
 
 quit.onclick = function () {
+    win.pause()
+    lose.pause()
+    
     game.style.animation = "fadeout 500ms"
     game.style.visibility = "hidden"
 
